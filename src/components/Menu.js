@@ -5,18 +5,18 @@ export function Menu(){
 
     const handleClick = (id) => {
         Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            title: "Are you sure you want to order this dish?",
+            // text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, order it!"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
+                title: "Ordered satisfactorily!",
+                text: "Your dish has been ordered!",
                 icon: "success"
                 });
             }

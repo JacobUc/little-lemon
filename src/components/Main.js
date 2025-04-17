@@ -1,11 +1,9 @@
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { useReducer } from 'react'
 import { Header } from './Header'
-import { Booking } from './Booking'
 import { ConfirmedBooking } from './ConfirmedBooking'
 import { Menu } from './Menu'
 import { Testimonials } from './Testimonials'
-// Test
 import { BookingTable } from './BookingTable'
 
 export function Main() {
@@ -61,14 +59,7 @@ export function Main() {
                         <Testimonials />
                     </>
                 } />
-                <Route path='/v1' element={<Booking availableTimes={state} dispatch={dispatch} submitForm={submitForm} />} />
-                {/* Test */}
-                {/* <Route path='gemini' element={ <Gemini /> } /> */}
-                {/* <Route path='chatgpt' element={ <ChatGPT/> } /> */}
-                {/* <Route path='deepseek' element={ <DeepSeek/> } /> */}
-                {/* Se queda el diseno de V0, pero necesita ajustes en la validacion */}
                 <Route path='/booking' element={ <BookingTable availableTimes={state} dispatch={dispatch} /> } />
-
                 <Route path='/confirmed' availableTimes={state} element={ <ConfirmedBooking /> } />
             </Routes>
         </main>
