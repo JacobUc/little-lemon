@@ -1,7 +1,6 @@
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { useReducer } from 'react'
 import { Header } from './Header'
-import { ConfirmedBooking } from './ConfirmedBooking'
 import { Menu } from './Menu'
 import { Testimonials } from './Testimonials'
 import { BookingTable } from './BookingTable'
@@ -42,13 +41,6 @@ export function Main() {
         return {availableTimes: fetchAPI(new Date())}
     }
 
-    const navigate = useNavigate();
-    function submitForm(formData){
-        if(submitAPI(formData)){
-            navigate('/confirmed');
-        }
-    }
-
     return (
         <main>
             <Routes>
@@ -60,7 +52,6 @@ export function Main() {
                     </>
                 } />
                 <Route path='/booking' element={ <BookingTable availableTimes={state} dispatch={dispatch} /> } />
-                <Route path='/confirmed' availableTimes={state} element={ <ConfirmedBooking /> } />
             </Routes>
         </main>
     )
